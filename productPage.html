@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <title>Product Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        input[type="radio"]{
+            display: none;            
+        }
+        
+        input[type="radio"] + label.radioSize{
+            cursor: pointer;
+            width: 38px;
+            height: 38px;
+            text-align: center;
+            line-height: 38px;
+            background: #ddd;
+        }
+        input[type="radio"] + label.radioColor img{
+            width: 38px;
+            height: 38px;
+            padding: 2px;
+            /* border: 3px solid red; */
+        }
+
+    
+        input[type="radio"]:checked + label{
+            border: 1px solid rgb(247, 146, 146);
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="row border p-3 border-danger">
+            <div class="col-md-6 border border-primary">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1525498128493-380d1990a112?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"" class="mw-100 mh-100" id="productImg" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="details">
+                    <h1>商品名稱</h1>
+                    <h2>價錢 NT$100</h2>
+                    <p>商品說明：Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae placeat consectetur, laborum alias nobis corrupti nesciunt dicta, repellat voluptas ducimus repudiandae distinctio dignissimos voluptates quod impedit accusantium neque itaque. Asperiores?</p>
+                    <form class="m-2" id="colorForm">
+                        <p class="mb-1">顏色：<span id="color">紅色</span></p>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="紅色" checked>
+                            <label class="form-check-label radioColor" for="inlineRadio1"><img src="https://images.unsplash.com/photo-1525498128493-380d1990a112?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80" alt=""></label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="黃色">
+                            <label class="form-check-label radioColor" for="inlineRadio2"><img src="https://images.unsplash.com/photo-1540317700647-ec69694d70d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt=""></label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="藍色">
+                            <label class="form-check-label radioColor" for="inlineRadio3"><img src="https://images.unsplash.com/photo-1489183988443-b37b7e119ba6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80" alt=""></label>
+                        </div>
+                    </form>
+                
+                
+                    <form class="m-2">
+                        <p class="mb-1">尺寸：<span id="size">S</span></p>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio4" value="S" checked>
+                            <label class="form-check-label radioSize" for="inlineRadio4">S</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio5" value="M">
+                            <label class="form-check-label radioSize" for="inlineRadio5">M</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio6" value="L">
+                            <label class="form-check-label radioSize" for="inlineRadio6">L</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio7" value="XL">
+                            <label class="form-check-label radioSize" for="inlineRadio7">XL</label>
+                        </div>
+                    </form>
+
+                    <div class="form-group">
+                        <label for="number">Password</label>
+                        <input type="number" class="number" placeholder="1" min="0">
+                    </div>
+                    <button type="submit" class="btn btn-primary">加入購物車</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script>
+        $(':radio[name="inlineRadioOptions1"]').change(function() {
+            let productImg = document.querySelector("#productImg");
+            let color = document.querySelector("#color");
+            let colorCheck = $(this).filter(':checked').val();
+            // console.log(colorCheck);
+            color.innerHTML=colorCheck;
+            if (colorCheck == "紅色"){
+                productImg.src = "https://images.unsplash.com/photo-1525498128493-380d1990a112?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80";
+            }else if(colorCheck == "黃色"){
+                productImg.src = "https://images.unsplash.com/photo-1540317700647-ec69694d70d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80";
+            }else if(colorCheck == "藍色"){
+                productImg.src = "https://images.unsplash.com/photo-1489183988443-b37b7e119ba6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80";
+            }
+        });
+        $(':radio[name="inlineRadioOptions2"]').change(function() {
+            let size = document.querySelector("#size");
+            let sizeCheck = $(this).filter(':checked').val();
+            // console.log(sizeCheck); 
+            size.innerHTML = sizeCheck;
+        });
+    </script>
+</body>
+</html>
