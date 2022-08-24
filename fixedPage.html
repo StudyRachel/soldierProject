@@ -12,7 +12,17 @@
     <style>
         .position-fixed{
             bottom: 0;
+            right: 0;            
+        }
+        .myAnimation{
+            position: fixed;
+            bottom: 0;
             right: 0;
+            /* opacity: 1; */
+            animation-name: hide;
+            animation-duration: 1s;
+            animation-timing-function:ease-in;
+            animation-fill-mode: forwards;
         }
         .closebtn{
             position: absolute;
@@ -20,9 +30,16 @@
             left: 0;
             font-size: 30px;
         }
-        #infoDiv{
+        /* #infoDiv{
             display: none;
+        } */
+
+        @keyframes hide {
+            0%{opacity: 1;}
+            50% { bottom: -500px; opacity: 0.5;}
+            100%{display: none; opacity: 0; bottom: -500px;}
         }
+        
     </style>
 </head>
 <body>
@@ -44,13 +61,15 @@
     <script>
         let infoDiv = document.querySelector("#infoDiv");
         // 5秒後才出現彈跳視窗--start
-        var time = setTimeout(fun, 2000);    
-            function fun() {  
-                infoDiv.style.display = "block";  
-            } 
+        // var time = setTimeout(fun, 2000);    
+        //     function fun() {  
+        //         infoDiv.style.display = "block";  
+        //     } 
         // 5秒後才出現彈跳視窗---end 
         function closeFunction() {
-            infoDiv.style.display = "none";
+            // infoDiv.style.display = "none";
+            infoDiv.className = "myAnimation";
+            
         }
     </script>
     
